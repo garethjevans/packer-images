@@ -32,6 +32,10 @@ pipeline {
         AZURE_CLIENT_SECRET = credentials('azure-client-secret')
       }
 
+      when {
+        branch 'master'
+      }
+
       steps {
         sh """
           packer build \
